@@ -3,9 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Register</title>
 </head>
 <body>
-    
+    <header>
+        <h1 class="register_title">Inscription</h1>
+    </header>
+    <main>
+        <p>Il est nécessaire de vous enregistrez pour vous connecter</p>
+        <form class="register_form" action="register" method="POST">
+            
+            <label for="userName">Nom d'utilisateur:</label>
+            <input type="text" class="userName" name="userName" placeholder="Ton pseudo" required><br><br>
+
+            <label for="password">Mot de passe:</label>
+            <input type="password" class="password" name="password" placeholder="******" required><br><br>
+            
+            <label for="password">Vérification de mot de passe</label>
+            <input type="password" class="check_password" name="check_password" placeholder="******" required><br><br>
+            
+            <button type="submit" class="register_btn">S'inscrire</button>
+        </form>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
