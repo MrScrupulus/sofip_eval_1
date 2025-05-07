@@ -54,6 +54,27 @@ input{
     border-radius: 5px;
     border: none;
 }
+.password-container,
+.checkPassword-container,
+.register_btn {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.5s ease-in-out;
+}
+
+.checkPassword-container {
+    transform: translateX(-100%);
+}
+
+.register_btn {
+    transform: translateY(100%);
+}
+
+.visible {
+    opacity: 1;
+    transform: translateX(0) !important;
+    transform: translateY(0) !important;
+}
 .register_btn{
     margin: 50px;
     width: 250px;
@@ -115,26 +136,37 @@ section{
 .trailer{
     margin-top: 8%
 }
+#trailer{
+    margin-bottom: 10px;
+    /* margin-right: 2Opx; */
+}
 iframe{
     /* margin-top: ; */
     margin-left: 28%;
 }
 .casting{
+    margin-top: 2%;
+    
+    
+}
+#casting{
+    margin-left: 2%;
     margin-top: 8%;
-    display: flex;
+    text-align: left;
+    color: 	rgba(30, 28, 28, 0.689);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #ffef55;  
 }
 .pp{
     height: 200px;
     width: auto;
     border-radius: 15px;
 }
-.director{
-    font-size: 0.5em;
-    
-    margin-right: 10px;
-    color: black;
-
-    
-    
+.actor{
+    margin-top: 10px;;
 }
+.casting_PP{
+    margin: 2%;
+}
+
 
