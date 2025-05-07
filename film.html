@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Film</title>
 </head>
-<body>
+<body style="visibility: hidden;">
     <header>
         <div class="hey_message">
             
@@ -47,6 +47,10 @@
         <div class="casting_PP"><img class="pp" src="https://fr.web.img6.acsta.net/c_310_420/pictures/20/01/14/15/04/5075282.jpg" alt="actor"><article class="actor">Michael Gambon</article></div>
     </section>
 </main>
-    <script src="script.js"></script>
+    <script src="script.js">
+        if (localStorage.getItem('userData')){
+            document.body.style.visibility ='visible';
+        }
+    </script>
 </body>
 </html>

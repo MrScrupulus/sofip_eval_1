@@ -138,13 +138,13 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 // Si connecté ou pas connecté: accessibilité à la page film.html
 document.addEventListener("DOMContentLoaded", function () {
-  if (window.location.pathname.includes("/film.html")) {
+  if (window.location.pathname.includes("film.html")) {
     const storedData = localStorage.getItem("userData");
     if (!storedData) {
       alert(
         "Non, non, non. On ne triche pas, tu fais comme tout le monde, tu te connectes pour voir mon film favoris et si ce n'est pas déjà fait tu t'inscrits !!!"
       );
-      window.location.href = "register.html";
+      window.location.replace("register.html");
       return;
     }
     const userData = JSON.parse(storedData);
