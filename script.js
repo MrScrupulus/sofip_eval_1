@@ -1,23 +1,66 @@
 document.addEventListener("DOMContentLoaded", function () {
   const registerForm = document.querySelector(".register_form");
+  let userName = document.querySelector(".userName");
+    let password = document.querySelector(".password");
+    let checkPassword = document.querySelector(".check_password");
+    const passwordContainer = document.querySelector('.password-container');
+    const checkPasswordContainer = document.querySelector('.checkPassword-container');
+    const registerBtn = document.querySelector('.register_btn');
 
+    // Cache les éléments
+    passwordContainer.style.display = 'none';
+    checkPasswordContainer.style.display = 'none';
+    registerBtn.style.opacity = '0';
+    registerBtn.style.transform = 'translateY(100%)';
+
+    // Écoute changements champ username
+    userName.addEventListener('input', function() {
+        if (this.value.length > 0) {
+            passwordContainer.style.display = 'block';
+            setTimeout(() => {
+                passwordContainer.classList.add('visible');
+            }, 50);
+        }
+    });
+
+    // Écoute changements champ password
+    password.addEventListener('input', function() {
+        if (this.value.length > 0) {
+            checkPasswordContainer.style.display = 'block';
+            setTimeout(() => {
+                checkPasswordContainer.classList.add('visible');
+            }, 50);
+        }
+    });
+
+    // Écoute changements champ check password
+    checkPassword.addEventListener('input', function() {
+        if (this.value.length > 0) {
+            registerBtn.style.opacity = '1';
+            registerBtn.style.transform = 'translateY(0)';
+            setTimeout(() => {
+                registerBtn.classList.add('visible');
+            }, 50);
+        }
+    });
   registerForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    let userName = document.querySelector(".userName").value;
-    let password = document.querySelector(".password").value;
-    let checkPassword = document.querySelector(".check_password").value;
+    const userNameValue = userName.value;
+    const passwordValue = password.value;
+    const checkPasswordValue = checkPassword.value;
+
 
     // Si champs vides
-    if (userName === "" || password === "" || checkPassword === "") {
+    if (userNameValue === "" || passwordValue === "" || checkPasswordValue === "") {
       alert(
-        "Non, non, non. Tu vas pas me la faire, on rempli tous les champs !!!"
+        "Non, non, non. Tu ne vas pas me la faire, on rempli tous les champs !!!"
       );
       return;
     }
 
     // Si la correspondance des mots de passe n'est pas bonne
-    if (password !== checkPassword) {
+    if (passwordValue !== checkPasswordValue) {
       alert(
         'Il y a une erreur dans la vérification du mot de passe, sert toi de l\'oeil pour vérifier que le champs "mot de passe" et "vérification de mot de passe" soient identiques.'
       );
@@ -32,8 +75,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Création de l'objet utilisateur
     const userData = {
-      username: userName,
-      password: password,
+      username: userNameValue,
+      password: passwordValue,
     };
 
     // Stockage dans le localStorage
@@ -57,11 +100,11 @@ document.addEventListener("DOMContentLoaded", function () {
   loginForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    let userName = document.querySelector(".userName").value;
-    let password = document.querySelector(".password").value;
+    let userNameValue = document.querySelector(".userName").value;
+    let passwordValue = document.querySelector(".password").value;
 
     // Si champs vides
-    if (userName === "" || password === "") {
+    if (userNameValue === "" || passwordValue === "") {
       alert("Tu n'as pas rempli tous les champs.");
       return;
     }
@@ -72,15 +115,16 @@ document.addEventListener("DOMContentLoaded", function () {
       alert(
         "Non, non, non. Si tu ne t'es pas inscrit avant tu ne peux pas te connecter."
       );
+      window.location.href = "register.html"; 
       return;
     }
 
     const userData = JSON.parse(storedData);
 
     // informations de connexion
-    if (userName === userData.username && password === userData.password) {
+    if (userNameValue === userData.username && passwordValue === userData.password) {
       alert(
-        `Connexion réussie ! Bravo ${userName}, Tu vas pouvoir découvrir mon film favoris.`
+        `Connexion réussie ! Bravo ${userNameValue}, Tu vas pouvoir découvrir mon film favoris.`
       );
       // Redirection vers la page film
       window.location.href = "film.html";
@@ -88,12 +132,13 @@ document.addEventListener("DOMContentLoaded", function () {
       alert(
         "Non, non, non. Tu n'as pas le bon mot de passe ou le bon nom d'utilisateur !!!"
       );
+      return;
     }
   });
 });
 // Si connecté ou pas connecté: accessibilité à la page film.html
 document.addEventListener("DOMContentLoaded", function () {
-  if (window.location.pathname === "/film.html") {
+  if (window.location.pathname.includes("/film.html")) {
     const storedData = localStorage.getItem("userData");
     if (!storedData) {
       alert(
