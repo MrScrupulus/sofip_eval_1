@@ -1,0 +1,140 @@
+body{
+    font-family: "Raleway", sans-serif;
+    /* font-style: bold; */
+    font-size: 1.5em;
+    color: #ffef55;
+    /* -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #ffef55; */
+    background-color: #0097c3;
+    text-align: center;
+    /* -webkit-text-stroke-width: 0.2px;
+    -webkit-text-stroke-color: black;  */
+}
+h1 {
+    
+    font-size: 4em;
+    color: 	rgba(30, 28, 28, 0.689);
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-style: bold;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #ffef55; 
+}
+.name_film{
+    text-align: center;
+    color: 	rgba(30, 28, 28, 0.689);
+    font-family: "Raleway", sans-serif;
+    font-size: 1.6em;
+    font-weight: 700;
+    font-style: bold;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #ffef55; 
+}
+h3{
+    font-size: 1em;
+    text-align: center;
+}
+.zissou{
+    text-align: center;
+    color: 	rgba(30, 28, 28, 0.689);
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-style: bold;
+
+    -webkit-text-stroke-width:0.5px;
+    -webkit-text-stroke-color: #ffef55; 
+}
+input{
+    margin: 30px;
+    font-size: medium;
+    font-style: bold;
+    text-align: center;
+    width: 125px;
+    height: 25px;
+    border-radius: 5px;
+    border: none;
+}
+.register_btn{
+    margin: 50px;
+    width: 250px;
+    height: 100px;
+    font-size: 2em;
+    background-color: #e1c5a3;
+    border-radius: 5px; 
+}
+.login_btn{
+    margin: 50px;
+    width: 250px;
+    height: 100px;
+    font-size: 1.5em;
+    background-color: #e1c5a3;
+    border-radius: 5px; 
+}
+button:hover{
+    background-color: #ffef55;
+    color: #000000;
+}
+.hey_message{
+    font-size: 0.8em;
+}
+.film_container{
+   text-align:justify;
+}
+.favori{
+    margin-left: 10%;
+    font-size:0.7em;
+}
+.director{
+    font-size: 0.7em;
+    text-align: center;
+    margin-left: 55%;
+}
+section{
+    display: flex;
+}
+#synopsis{
+    color: 	rgba(30, 28, 28, 0.689);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #ffef55;  
+}
+.synopsis{
+    width: auto;
+    text-align: left;
+    margin-top: 10%;
+    margin-left: 20px;
+    margin-right: 20%;
+    display: block;
+}
+.img{
+    width: auto;
+    height: 400px;
+    display: flex;
+    margin-top: 10%;
+    margin-left: 10%;
+}
+.trailer{
+    margin-top: 8%
+}
+iframe{
+    /* margin-top: ; */
+    margin-left: 28%;
+}
+.casting{
+    margin-top: 8%;
+    display: flex;
+}
+.pp{
+    height: 200px;
+    width: auto;
+    border-radius: 15px;
+}
+.director{
+    font-size: 0.5em;
+    
+    margin-right: 10px;
+    color: black;
+
+    
+    
+}
+
