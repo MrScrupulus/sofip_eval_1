@@ -13,12 +13,17 @@
 
         </div>
 
-        <h1 class="title_film">FILM</h1>
-        
+        <h1 class="title_film">LE FILM</h1>
+        <nav>
+            <button class="nav_btn" id="nav_btn_register" >S'inscrire</button>
+            <button class="nav_btn" id="nav_btn_login" >Se connecter</button>
+            <button class="nav_btn" id="nav_btn_film" >Film</button>
+            <button class="nav_btn" id="nav_btn_logout" ">Se déconnecter</button>
+        </nav>
     </header>
     <main>
         <div class="film_container">
-            <p class="favori">Mon film préféré :</p>
+        
             <h2 class="name_film">THE</h2>
             <h2 class="name_film"> LIFE AQUATIC</h2>
             <h3>with</h3>
@@ -46,9 +51,17 @@
         <div class="casting_PP"><img class="pp" src="https://fr.web.img4.acsta.net/c_310_420/pictures/17/09/13/17/23/2630896.jpg" alt="actor"><article class="actor">Jeff Goldblum</article></div>
         <div class="casting_PP"><img class="pp" src="https://fr.web.img6.acsta.net/c_310_420/pictures/20/01/14/15/04/5075282.jpg" alt="actor"><article class="actor">Michael Gambon</article></div>
     </section>
+
+    <div class="why">
+        <h2 id="why">Pourquoi ce film ?</h2>
+        <p>Ce film, réalisé par Wes Anderson, est une comédie fine, dans laquelle on s'attache aux personnages et leurs aventures.<br>
+            L'univers est d'une douceur onirique, avec des personnages qui ont un charisme tout particulier. <br>
+            Et la B.O. du film offre une atmosphère des plus agréables pour suivre leurs aventures.
+        </p>
+    </div>
 </main>
-    <script src="script.js">
-        if (localStorage.getItem('userData')){
+    <script src="script.js"></script>
+        <script>if (localStorage.getItem('userData')){
             document.body.style.visibility ='visible';
         }
     </script>

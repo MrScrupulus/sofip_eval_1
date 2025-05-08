@@ -1,3 +1,36 @@
+
+document.addEventListener("DOMContentLoaded", function () {
+  const navBtnRegister = document.querySelector("#nav_btn_register");
+  const navBtnLogin = document.querySelector("#nav_btn_login");
+  const navBtnFilm = document.querySelector("#nav_btn_film");
+  const navBtnLogout = document.querySelector("#nav_btn_logout");
+
+  if(navBtnRegister){
+    navBtnRegister.addEventListener("click",() => {
+      window.location.href = "register.html";
+
+    });
+  }
+  if(navBtnLogin){
+    navBtnLogin.addEventListener("click",() => {
+      window.location.href = "login.html";
+    });
+  }
+  if(navBtnFilm){
+    navBtnFilm.addEventListener("click",() => {
+      window.location.href = "film.html";
+    });
+  }
+  if(navBtnLogout){
+    navBtnLogout.addEventListener("click",() => {
+      // localStorage.removeItem('userData');
+      window.location.href = 'login.html'; 
+    });
+  }
+});
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
   const registerForm = document.querySelector(".register_form");
   let userName = document.querySelector(".userName");
@@ -22,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 50);
         }
     });
+    
 
     // Écoute changements champ password
     password.addEventListener('input', function() {
@@ -59,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Si la correspondance des mots de passe n'est pas bonne
+    // correspondance des mots de passe pas bonne
     if (passwordValue !== checkPasswordValue) {
       alert(
         'Il y a une erreur dans la vérification du mot de passe, sert toi de l\'oeil pour vérifier que le champs "mot de passe" et "vérification de mot de passe" soient identiques.'
@@ -67,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Si le mot de passe est trop court
+    // mot de passe est trop court
     if (password.length < 4) {
       alert("Le mot de passe doit contenir au moins 4 caractères 1+1+1+1.");
       return;
@@ -79,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
       password: passwordValue,
     };
 
-    // Stockage dans le localStorage
+    // Stockage ds le localStorage
     try {
       localStorage.setItem("userData", JSON.stringify(userData));
       alert(
@@ -136,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-// Si connecté ou pas connecté: accessibilité à la page film.html
+// accessibilité à la page film
 document.addEventListener("DOMContentLoaded", function () {
   if (window.location.pathname.includes("film.html")) {
     const storedData = localStorage.getItem("userData");
@@ -151,5 +185,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const heyMessage = document.querySelector(".hey_message");
     heyMessage.textContent = `Bienvenue ${userData.username}, même si je sais que c\'est toi Pierre, hein !!! tu as enfin décidé de t'inscrire pour découvrir mon film favoris !`;
     document.body.insertBefore(heyMessage, document.body.firstChild);
-  }
+  } 
 });
+

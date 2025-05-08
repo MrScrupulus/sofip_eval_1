@@ -24,7 +24,7 @@ h1 {
     text-align: center;
     color: 	rgba(30, 28, 28, 0.689);
     font-family: "Raleway", sans-serif;
-    font-size: 1.6em;
+    font-size: 2.5em;
     font-weight: 700;
     font-style: bold;
     -webkit-text-stroke-width: 1px;
@@ -52,7 +52,8 @@ input{
     width: 125px;
     height: 25px;
     border-radius: 5px;
-    border: none;
+    
+    border: 1px solid #f24f26
 }
 .password-container,
 .checkPassword-container,
@@ -82,6 +83,7 @@ input{
     font-size: 2em;
     background-color: #e1c5a3;
     border-radius: 5px; 
+    border: 2px solid #f24f26
 }
 .login_btn{
     margin: 50px;
@@ -90,16 +92,18 @@ input{
     font-size: 1.5em;
     background-color: #e1c5a3;
     border-radius: 5px; 
+    border: 2px solid #f24f26
 }
 button:hover{
     background-color: #ffef55;
     color: #000000;
 }
 .hey_message{
-    font-size: 0.8em;
+    font-size: 0.6em;
 }
 .film_container{
    text-align:justify;
+   margin-top: 10%;
 }
 .favori{
     margin-left: 10%;
@@ -137,15 +141,23 @@ section{
     margin-top: 8%
 }
 #trailer{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 28%;
     margin-bottom: 10px;
     /* margin-right: 2Opx; */
 }
 iframe{
     /* margin-top: ; */
     margin-left: 28%;
+    display: flex;
+    flex-wrap: wrap;
 }
 .casting{
     margin-top: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     
     
 }
@@ -168,5 +180,39 @@ iframe{
 .casting_PP{
     margin: 2%;
 }
+nav{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 2px solid #f24f26;
+}
+.nav_btn{
+    margin: 5%;
+    background-color: 	#e1c5a3;
+    border-radius: 5px;
+    color: #f24f26; 
+    justify-content: center;
+    width: 200px;
+    height: 75px;
+    font-weight: bold;
+    font-size: 0.6em;
+    border: 2px solid #f24f26;
+    
+}
+.nav_btn:hover{
+    background-color: #f24f26;
+    color: #000000;
+    border: 2px solid #ffef55;
+    transform: scale(1.02);
+}
+.why{
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: justify;
+}
+
+
 
 
