@@ -231,15 +231,20 @@ document.addEventListener("DOMContentLoaded", function () {
  if(contactForm){
   contactForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    const formData = new FormData(contactForm);
-    const userName = formData.get('userName');
-    const email = formData.get('email');
-    const message = formData.get('message');
-    const mailtoLink = `mailto:mr.scrupulus@gmail.com?body=Message de: ${userName} ${email} : ${message}`;
+   
+    const userName = document.querySelector(".contactName").value;
+    const email = document.querySelector(".contactEmail").value;
+    const message = document.querySelector(".contactMessage").value;
+    if(userName === "" || email === "" || message === ""){
+      alert("Tu n'as pas rempli tous les champs.");
+      return;
+    }
+    alert(`Merci pour ton message ! Je te réponds au plus vite ${userName}`);
+    contactForm.reset();
+
+    const mailtoLink = `mailto:mr.scrupulus@gmail.com?body=Message de : ${userName}%0D%0AEmail : ${email}%0D%0AMessage : ${message}`;
     window.location.href = mailtoLink;
-    this.reset();
-    alert('Merci pour ton message !');
-    return;
+    
   });
  }
   });

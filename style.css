@@ -257,7 +257,7 @@ nav{
         position: absolute;
         transform: translateX(100%);
         right: -100px;
-        animation: swim 10s linear infinite;
+        animation: swim 8s linear infinite;
     }
     @keyframes swim {
         0% {

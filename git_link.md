@@ -20,3 +20,8 @@ Voici la liste de ce qui doit apparaitre sur cette page :
 4. La bande annonce
 5. Les membres principaux du casting
 6. Pourquoi vous aimez particulierement ce film.
+
+
+### Notes :
+Je n'ai pas réussi à rendre fonctionnel le formulaire de contact...
+Je n'arrive pas
