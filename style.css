@@ -175,6 +175,8 @@ iframe{
     border-radius: 15px;
 }
 .actor{
+    display: flex;
+    flex-wrap: wrap;
     margin-top: 10px;;
 }
 .casting_PP{
@@ -212,7 +214,118 @@ nav{
     margin-right: 10%;
     text-align: justify;
 }
+.submarine-container {
+    
+    /* position: fixed; */
+    top: 50%;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
 
-
-
+    z-index: 1;
+}
+.submarine{
+    margin-top: 100px;
+        position: absolute;
+        transform: translateX(100%);
+        right: -100px;
+        animation: swim 10s linear infinite;
+    }
+    @keyframes swim {
+        0% {
+            transform: translateX(0) translateY(0);
+        }
+        25% {
+            transform: translateX(-25vw) translateY(-70px);
+        }
+        50% {
+            transform: translateX(-50vw) translateY(0);
+        }
+        75% {
+            transform: translateX(-75vw) translateY(-70px);
+        }
+        100% {
+            transform: translateX(calc(-100vw - 100px)) translateY(0);
+        }
+    }
+    /* .contact_container {
+       margin: 20px;
+        top: calc(50% + 150px); 
+        width: 100%;
+        text-align: center;
+        z-index: 1;
+    }
+    .contact_btn {
+        background-color: #e1c5a3;
+        border: 2px solid #f24f26;
+        color: #f24f26;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+    
+    .contact_btn:hover {
+        background-color: #f24f26;
+        color: #000000;
+        border: 2px solid #ffef55;
+        transform: scale(1.02);
+    } */
+    .contact_container {
+        margin-top: 200px; 
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .contact_container form {
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        gap: 15px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .contact_container label {
+        min-width: 150px; 
+        text-align: left;
+    }
+    
+    .contact_container input,
+    .contact_container textarea {
+        display: flex;
+        flex-direction: wrap;
+        flex: 1;
+        /* width: 100%; */
+        padding: 10px;
+        margin: 5px 0;
+        border: 2px solid #f24f26;
+        border-radius: 5px;
+    }
+    
+    .contact_container textarea {
+        width: 250px;
+        height: 150px;
+        resize: vertical;
+    }
+    
+    
+    .contactBtn {
+        background-color: #e1c5a3;
+        border: 2px solid #f24f26;
+        color: #f24f26;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+    
+    .contactBtn:hover {
+        background-color: #f24f26;
+        color: #000000;
+        border: 2px solid #ffef55;
+        transform: scale(1.02);
+    }
 

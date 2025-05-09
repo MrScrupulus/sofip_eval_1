@@ -59,11 +59,37 @@
             Et la B.O. du film offre une atmosphère des plus agréables pour suivre leurs aventures.
         </p>
     </div>
+    <div class="submarine_container">
+        <img src="submarine.jpg" alt="image de sous-marin" class="submarine">
+    </div>
+    <div class="contact_container">
+        <p>Si jamais tu veux en savoir plus sur le film, remplie ce formulaire
+            <form action="contact" method="post">
+            
+            <div>
+                <label for="userName">Nom d'utilisateur :</label>
+                <input type="text" name="userName" placeholder="Ton pseudo" class="contactName">
+            </div>
+            <div>
+                <label for="email">Email :</label>
+                <input type="email" name="email" placeholder="Ton email" class="contactEmail">
+                <label for="message">Message :</label>
+            </div>
+            <div>
+                <textarea name="message" placeholder="Ton message" class="contactMessage"></textarea>
+            </div>
+            <div>
+                <button type="submit" class="contactBtn">Envoyer</button>
+            </div>
+            </form>
+        </p>      
+    </div>
 </main>
     <script src="script.js"></script>
         <script>if (localStorage.getItem('userData')){
             document.body.style.visibility ='visible';
         }
     </script>
+    
 </body>
 </html>
