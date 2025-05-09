@@ -39,19 +39,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const passwordContainer = document.querySelector('.password-container');
     const checkPasswordContainer = document.querySelector('.checkPassword-container');
     const registerBtn = document.querySelector('.register_btn');
+    
 
     // Cache les éléments
     passwordContainer.style.display = 'none';
     checkPasswordContainer.style.display = 'none';
     registerBtn.style.opacity = '0';
     registerBtn.style.transform = 'translateY(100%)';
-
+   
     // Écoute changements champ username
     userName.addEventListener('input', function() {
         if (this.value.length > 0) {
-            passwordContainer.style.display = 'block';
+          passwordContainer.style.display = 'block';
+            
             setTimeout(() => {
-                passwordContainer.classList.add('visible');
+              passwordContainer.classList.add('visible');
+              
             }, 50);
         }
     });
@@ -130,6 +133,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   const loginForm = document.querySelector(".login_form");
+  if (loginForm) {
+    let userName = document.querySelector(".userName");
+    const passwordContainer = document.querySelector('.password-container');
+    const loginBtn = document.querySelector('.login_btn');
+
+    // Cache initialement le conteneur de mot de passe
+    if (passwordContainer) {
+      passwordContainer.style.display = 'none';
+    }
+
+    // Écoute les changements sur le champ username
+    if (userName) {
+      userName.addEventListener('input', function() {
+        if (this.value.length > 0 && passwordContainer) {
+          passwordContainer.style.display = 'block';
+          setTimeout(() => {
+            passwordContainer.classList.add('visible');
+          }, 50);
+        }
+      });
+    }
+  }
 
   loginForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -169,6 +194,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
   });
+
 });
 // accessibilité à la page film
 document.addEventListener("DOMContentLoaded", function () {
@@ -185,6 +211,37 @@ document.addEventListener("DOMContentLoaded", function () {
     const heyMessage = document.querySelector(".hey_message");
     heyMessage.textContent = `Bienvenue ${userData.username}, même si je sais que c\'est toi Pierre, hein !!! tu as enfin décidé de t'inscrire pour découvrir mon film favoris !`;
     document.body.insertBefore(heyMessage, document.body.firstChild);
-  } 
+  }   
 });
+document.addEventListener("DOMContentLoaded",  ()=> {
+  
+  const toggleBtn = document.querySelector(".toggle-password");
+
+  toggleBtn.addEventListener("click", ()=> {
+    const input = document.querySelector(".password", ".check_password");
+    
+    input.type = input.type === "password" ? "text" : "password"; 
+    input.type = input.type === "check_password" ? "text" : "check_password";
+  });
+
+});
+// formulaire de contact, ne fonctionne pas...
+document.addEventListener("DOMContentLoaded", function () {
+  const contactForm = document.querySelector(".contact_form");
+ if(contactForm){
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const formData = new FormData(contactForm);
+    const userName = formData.get('userName');
+    const email = formData.get('email');
+    const message = formData.get('message');
+    const mailtoLink = `mailto:mr.scrupulus@gmail.com?body=Message de: ${userName} ${email} : ${message}`;
+    window.location.href = mailtoLink;
+    this.reset();
+    alert('Merci pour ton message !');
+    return;
+  });
+ }
+  });
+
 

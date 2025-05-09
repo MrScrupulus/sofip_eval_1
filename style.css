@@ -57,17 +57,45 @@ input{
 }
 .password-container,
 .checkPassword-container,
-.register_btn {
+.register_btn
+ {
     opacity: 0;
     transform: translateX(100%);
     transition: all 0.5s ease-in-out;
 }
 
-.checkPassword-container {
+.checkPassword-container,
+.login_form .password-container {
     transform: translateX(-100%);
+    transition: all 0.5s ease-in-out;
 }
 
-.register_btn {
+.input-container {
+    position: relative;
+    display: inline-block;
+}
+.toggle-password {
+    position: absolute;
+    right: -30px;
+    top:25%;
+     /* transform: translateY(-50%);  */
+    background-color: #0097c3;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 1.2em;
+    transition: opacity 0.3s ease;
+}
+
+.toggle-password:hover {
+   
+    background-color: #0097c3;
+} 
+.toggle-password.active {
+    color: #0097c3;
+}
+.register_btn,
+.login_btn {
     transform: translateY(100%);
 }
 
@@ -287,6 +315,11 @@ nav{
         max-width: 600px;
         margin: 0 auto;
     }
+    .contact_container form div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
     .contact_container label {
         min-width: 150px; 
         text-align: left;
@@ -294,8 +327,8 @@ nav{
     
     .contact_container input,
     .contact_container textarea {
-        display: flex;
-        flex-direction: wrap;
+        /* display: flex;
+        flex-direction: wrap; */
         flex: 1;
         /* width: 100%; */
         padding: 10px;
