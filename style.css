@@ -165,6 +165,15 @@ section{
     margin-top: 10%;
     margin-left: 10%;
 }
+.shark{
+    margin-top: 50px;
+    width: 200px;
+    height: 75px;
+     position: absolute;
+        transform: translateX(100%);
+        right: -100px;
+        animation: swim 10s linear infinite reverse;
+}
 .trailer{
     margin-top: 8%
 }
@@ -259,6 +268,7 @@ nav{
         right: -100px;
         animation: swim 8s linear infinite;
     }
+    
     @keyframes swim {
         0% {
             transform: translateX(0) translateY(0);
